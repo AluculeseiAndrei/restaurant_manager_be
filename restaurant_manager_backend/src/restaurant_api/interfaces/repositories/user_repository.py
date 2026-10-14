@@ -1,0 +1,9 @@
+from typing import Any, Protocol
+
+
+class UserRepository(Protocol):
+    async def find_by_email(self, email: str) -> dict[str, Any] | None: ...
+
+    async def find_by_id(self, user_id: str) -> dict[str, Any] | None: ...
+
+    async def create(self, document: dict[str, Any]) -> str: ...
